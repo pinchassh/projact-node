@@ -89,5 +89,18 @@
             "rate": 4.5,
             "count": 120
         }
+    },
+    {
+        "id": 1,
+        "title": "Double-Door Refrigerator",
+        "description": "Large refrigerator with double doors for extensive food storage.",
+        "price": 1500,
+        "category": "Large Appliances",
+        "image": "https://example.com/images/fridge.jpg",
+        "quantity": 10,
+        "rating": {
+            "rate": 4.5,
+            "count": 120
+        }
     }
 ]
