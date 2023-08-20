@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1,
+        "title": "Double-Door Refrigerator",
+        "description": "Large refrigerator with double doors for extensive food storage.",
+        "price": 1500,
+        "category": "Large Appliances",
+        "image": "https://example.com/images/fridge.jpg",
+        "quantity": 10,
+        "rating": {
+            "rate": 4.5,
+            "count": 120
+        }
+    },
+    {
+        "id": 2,
+        "title": "4K Television",
+        "description": "Television with 4K resolution for an amazing viewing experience.",
+        "price": 2500,
+        "category": "Electronics",
+        "image": "https://example.com/images/tv.jpg",
+        "quantity": 5,
+        "rating": {
+            "rate": 4.8,
+            "count": 90
+        }
+    },
+    {
+        "id": 3,
+        "title": "Modern Dining Table",
+        "description": "Beautiful dining table with a modern design.",
+        "price": 800,
+        "category": "Furniture",
+        "image": "https://example.com/images/table.jpg",
+        "quantity": 15,
+        "rating": {
+            "rate": 4.2,
+            "count": 50
+        }
+    },
+    {
+        "id": 4,
+        "title": "Sport Shoes",
+        "description": "Comfortable sports shoes for physical activities.",
+        "price": 120,
+        "category": "Apparel",
+        "image": "https://example.com/images/sneakers.jpg",
+        "quantity": 100,
+        "rating": {
+            "rate": 4.6,
+            "count": 200
+        }
+    },
+    {
+        "id": 5,
+        "title": "Laptop Computer",
+        "description": "Fast and lightweight laptop computer.",
+        "price": 1800,
+        "category": "Electronics",
+        "image": "https://example.com/images/laptop.jpg",
+        "quantity": 8,
+        "rating": {
+            "rate": 4.7,
+            "count": 70
+        }
+    },
+    {
+        "id": 1,
+        "title": "Double-Door Refrigerator",
+        "description": "Large refrigerator with double doors for extensive food storage.",
+        "price": 1500,
+        "category": "Large Appliances",
+        "image": "https://example.com/images/fridge.jpg",
+        "quantity": 10,
+        "rating": {
+            "rate": 4.5,
+            "count": 120
+        }
+    },
+    {
+        "id": 1,
+        "title": "Double-Door Refrigerator",
+        "description": "Large refrigerator with double doors for extensive food storage.",
+        "price": 1500,
+        "category": "Large Appliances",
+        "image": "https://example.com/images/fridge.jpg",
+        "quantity": 10,
+        "rating": {
+            "rate": 4.5,
+            "count": 120
+        }
+    }
+]
