@@ -3,7 +3,9 @@ const app = express();
 import  morgan  from "morgan";
 import router from './router/router.js';
 const port = 3000;
-app.use(express.json())
+
+app.use(express.json());
+app.use(morgan('tiny'))
 app.use('/api', router);
 
 

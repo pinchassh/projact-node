@@ -3,12 +3,14 @@ import * as dal from "../dal/dal.js";
 
 
 export const getAllProd = (req, res) => {
-    const prod = service.getAllProd();
+    service.getAllProd()
+    .then(prod=>res.json(prod))
+    .catch(err=>res.send('No data!'))
     // console.log(prod);
-    res.json(prod)
+    
 }
-export const getById = (req, res) => {
-    const prod = service.getById(req);
+export const getById = async(req, res) => {
+    const prod =await service.getById(req);
     // console.log(prod);
     res.json(prod)
 }
@@ -35,19 +37,61 @@ function checkNewProd(req) {
     return sends
 }
 
-export const updateProd = async (req,res) =>{
+export const updateProd = async (req, res) => {
     let i = 0;
-    const data = dal.getAllProd()
+    const data =await dal.getAllProd()
     for (const prod of data) {
-        // console.log(prod);
         if (prod.id === +req.params.id) {
             const index = i;
+            // console.log(i);
             // const arr = Object.keys(req.body);
-            await service.updateProd(req.body,index)
+            await service.updateProd(req.body, index)
             res.send('The product has been updated!')
+            return
         }
         i++
     }
+    res.status(450).send('There is no such ID')
+}
+
+export const deleteProd = async (req, res) => {
+    const data =await dal.getAllProd()
+    for (const prod of data) {
+        if (prod.id === +req.params.id) {
+            // console.log(prod.id);
+            // console.log(+req.params.id);
+            await service.deleteProd(req)
+            res.send('The product has been delete!')
+            return
+        }
+    }
+    res.status(450).send('There is no such ID')
+}
+
+export const changeQuantity = async (req, res) => {
+    let i = 0;
+    const data = dal.getAllProd()
+    // if (!req.body.quantity) {
+    //     res.send('please enter prodact quantity!');
+    //     return
+    // }
+    for (const prod of data) {
+        if (prod.id === +req.params.id) {
+            const index = i;
+            let action;
+            if (req.params.cal === '+') action = true;
+            else if (req.params.cal === '-') action = false;
+            else {
+                res.send('this option no relevent!');
+                return
+            }
+            await service.changeQuantity(index,action)
+            res.send('The quantity has been change!')
+            return
+        }
+        i++
+    }
+    res.status(450).send('There is no such ID')
 }
 
 
