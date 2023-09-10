@@ -1,27 +1,27 @@
-// import axios from 'axios';
-// axios.post('https://fakestoreapi.com/products', {
-//     firstName: 'Fred',
-//     lastName: 'Flintstone'
-//     })
-//     .then(function (response) {
-//     console.log(response);
-//     })
-//     .catch(function (error) {
-//     console.log(error);
-//     });
-import jsonfile from 'jsonfile';
+import { dataBaseAllProd, DBToAddProd, DBToUppdateProd } from '../test.js';
+import { dataBasegetById, DBToDeleteProd, DBTochangeQuantity } from '../test.js';
 
-export const getAllProd = () => {
-    return jsonfile.readFile('../data.json')
+
+export const getAllProd = async () => {
+    return await dataBaseAllProd()
 };
 
-// export const addProd = (prod) => {
-//     const data = getAllProd();
-//     data.push(prod)
-//     jsonfile.writeFile('./data.json', data)
-// }
+export const addProd = (req) => {
+    DBToAddProd(req)
+}
+
+export const getById = async (req) => {
+    return await dataBasegetById(+req.params.id)
+}
 
 export const updateProd = (req) => {
-    // console.log(req);
-    jsonfile.writeFile('./data.json', req)
+    DBToUppdateProd(+req.params.id, req.body)
+}
+
+export const deleteProd = (req) => {
+    DBToDeleteProd(+req.params.id)
+}
+
+export const changeQuantity = (req, action) => {
+    DBTochangeQuantity(+req.params.id, action)
 }
